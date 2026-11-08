@@ -1,0 +1,14 @@
+{
+  "name": "k20-day43-typescript-product-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "tsc",
+    "start": "npm run build && node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}
