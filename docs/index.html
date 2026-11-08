@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danh mục sản phẩm · TypeScript</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f6fa; color: #182a40; font: 1rem/1.5 system-ui, sans-serif; }
+    main { max-width: 66rem; margin: auto; padding: 2rem 1rem; }
+    header { background: #102b4a; color: white; padding: 2rem; border-radius: 1rem; }
+    header p { margin: 0; color: #c2def7; }
+    h1 { margin: .25rem 0; font-size: clamp(1.7rem, 5vw, 2.7rem); }
+    section { background: white; margin-top: 1rem; border-radius: .75rem; padding: 1.25rem; }
+    h2 { margin: 0 0 .75rem; font-size: 1.2rem; }
+    form { display: flex; flex-wrap: wrap; gap: .75rem; align-items: end; }
+    label { display: grid; gap: .25rem; }
+    input, select, button { font: inherit; padding: .45rem .65rem; border: 1px solid #8297ad; border-radius: .4rem; max-width: 100%; }
+    input { width: 12rem; }
+    button { background: #125b9a; color: white; border-color: #125b9a; cursor: pointer; }
+    .table-wrap { overflow: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: .65rem; border-bottom: 1px solid #dce5ee; }
+    th { background: #edf4fb; }
+    #result { min-height: 1.5em; }
+    a { color: #125b9a; }
+  </style>
+  <script type="module" src="./assets/browser.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <p>Bài tập TypeScript · Buổi 43</p>
+    <h1>Danh mục sản phẩm</h1>
+    <p>Thử xem, lọc, tìm và cập nhật 5 sản phẩm. Dữ liệu trở về mẫu ban đầu khi tải lại trang.</p>
+  </header>
+  <section aria-labelledby="catalog-title">
+    <h2 id="catalog-title">Danh sách sản phẩm</h2>
+    <form id="filters">
+      <label>Danh mục <select id="category"><option value="">Tất cả</option></select></label>
+      <label>Tồn kho chính xác <input id="stock-filter" type="number" min="0" placeholder="Ví dụ: 0"></label>
+      <button type="submit">Lọc sản phẩm</button>
+      <button type="reset">Xóa bộ lọc</button>
+    </form>
+    <p id="count" role="status"></p>
+    <div class="table-wrap" tabindex="0" aria-label="Bảng sản phẩm">
+      <table>
+        <thead><tr><th>ID</th><th>Tên sản phẩm</th><th>Giá</th><th>Danh mục</th><th>Tồn kho</th><th>Trạng thái</th></tr></thead>
+        <tbody id="products"></tbody>
+      </table>
+    </div>
+  </section>
+  <section aria-labelledby="edit-title">
+    <h2 id="edit-title">Tìm và cập nhật theo ID</h2>
+    <p>Tìm bằng ID. Khi cập nhật, để trống các trường bạn muốn giữ giá trị cũ.</p>
+    <form id="edit">
+      <label>ID <input id="product-id" type="number" min="1" required placeholder="101"></label>
+      <label>Tên mới <input id="name"></label>
+      <label>Giá mới (₫) <input id="price" type="number" min="0"></label>
+      <label>Tồn kho mới <input id="stock" type="number" min="0"></label>
+      <button type="submit" value="find">Tìm</button>
+      <button type="submit" value="update">Cập nhật</button>
+    </form>
+    <p id="result" role="status"></p>
+  </section>
+  <p><a href="https://github.com/haidmwp/k20-day43-typescript-product-catalog">Xem mã nguồn trên GitHub</a></p>
+</main>
+</body>
+</html>
