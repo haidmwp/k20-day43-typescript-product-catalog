@@ -27,7 +27,7 @@ export function updateProduct(id, update) {
   return { ...updated };
 }
 
-export function getProductField(product, key)[K] {
+export function getProductField(product, key) {
   return product[key];
 }
 
