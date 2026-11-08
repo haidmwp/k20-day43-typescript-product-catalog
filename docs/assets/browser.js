@@ -6,13 +6,13 @@ const table = document.querySelector("#products");
 const filters = document.querySelector("#filters");
 const category = document.querySelector("#category");
 const stockFilter = document.querySelector("#stock-filter");
-const count = document.querySelector<HTMLElement>("#count");
+const count = document.querySelector("#count");
 const edit = document.querySelector("#edit");
 const id = document.querySelector("#product-id");
 const nameInput = document.querySelector("#name");
 const price = document.querySelector("#price");
 const stock = document.querySelector("#stock");
-const result = document.querySelector<HTMLElement>("#result");
+const result = document.querySelector("#result");
 
 function stockLabel(product) {
   return PRODUCT_STATUS_LABELS[getStockStatus(product.stock)];
